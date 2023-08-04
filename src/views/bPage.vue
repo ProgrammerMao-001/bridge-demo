@@ -167,11 +167,11 @@
                 const loader = new GLTFLoader(loadManager);
                 const dracoLoader = new DRACOLoader("../../public/draco");
                 loader.setDRACOLoader(dracoLoader);
-                loader.load("/models/house/bothHu.gltf", (gltf) => {
+                loader.load("/models/house/cangfang.gltf", (gltf) => {
                     console.log(gltf, 'gltf')
                     const model = gltf.scene;
-                    model.scale.set(5, 5, 5); // 设置长宽高
-                    // model.scale.set(0.05, 0.05, 0.05); // 设置长宽高
+                    // model.scale.set(5, 5, 5); // 设置长宽高
+                    model.scale.set(0.05, 0.05, 0.05); // 设置长宽高
                     model.position.set(0, 2, 0); // 设置水平位置
                     scene.add(model);
                 });
