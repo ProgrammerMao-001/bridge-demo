@@ -167,10 +167,12 @@
                 const loader = new GLTFLoader(loadManager);
                 const dracoLoader = new DRACOLoader("../../public/draco");
                 loader.setDRACOLoader(dracoLoader);
-                loader.load("/models/house/cangfang.gltf", (gltf) => {
+                loader.load("/models/house/bothHu.gltf", (gltf) => {
+                    console.log(gltf, 'gltf')
                     const model = gltf.scene;
-                    model.scale.set(0.05, 0.05, 0.05);
-                    model.position.set(0, 2, 0);
+                    model.scale.set(5, 5, 5); // 设置长宽高
+                    // model.scale.set(0.05, 0.05, 0.05); // 设置长宽高
+                    model.position.set(0, 2, 0); // 设置水平位置
                     scene.add(model);
                 });
                 // loader.load("../models/bird/scene.gltf", (gltf) => {
@@ -191,6 +193,7 @@
                 //dat.gui的使用
                 var gui = new dat.GUI();
                 var control = new (function () {
+                    /* todo 打点 */
                     this.spot1 = function () {
                         this.CameraTween(50, 50, 50, 13, 107, -39);
                     };
@@ -200,14 +203,20 @@
                     this.spot3 = function () {
                         this.CameraTween(105, 24, 73, 60, 10, 40);
                     };
+                    this.spot4 = function () {
+                        this.CameraTween(110, 29, 78, 65, 15, 45);
+                    };
+                    /* todo 打点 */
                     this.cameraPosition = function () {
-                        alert(camera.position);
+                        console.log(camera, camera.position, '相机信息')
+                        alert(JSON.stringify(camera.position));
                     };
                 })();
                 var group1 = gui.addFolder("景点");
                 group1.add(control, "spot1").name("海盗旗帜");
                 group1.add(control, "spot2").name("鲨鱼群");
                 group1.add(control, "spot3").name("小船");
+                group1.add(control, "spot4").name("茶壶");
                 gui.add(control, "cameraPosition").name("查询摄像机位置");
 
                 labelRenderer = new CSS2DRenderer();
@@ -247,6 +256,14 @@
                     "一艘划桨小木船，它的主人在哪？",
                     [105, 24, 73, 60, 10, 40]
                 );
+                this.CreatePoints(
+                    "4",
+                    65,
+                    15,
+                    -35,
+                    "这是一个茶壶，我随便写的",
+                    [110, 29, 78, 65, 15, 45]
+                );
             },
             //初始化轨道控制器组件
             InitOrbitControl() {
@@ -261,7 +278,7 @@
             Render() {
                 requestAnimationFrame(this.Render.bind(this));
                 //水动画控制
-                // water.material.uniforms["time"].value += 1 / 60;
+                water.material.uniforms["time"].value += 1 / 60;
                 //轨道控制器动画控制
                 orbitControl && orbitControl.update();
                 //renderer持续渲染
