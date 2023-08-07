@@ -7,3 +7,6 @@ dat-gui  可以容易地创建修改代码变量的界面组件
 stats-js  能够在页面显示帧数，辅助开发
 babylonjs   // RoomEnvironment 是 Babylon.js 中的一个类，用于表示一个场景中的环境设置，比如光照、反射等。
               
+
+// cesium 
+cesium
