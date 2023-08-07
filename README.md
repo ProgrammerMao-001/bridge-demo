@@ -10,3 +10,6 @@ babylonjs   // RoomEnvironment 是 Babylon.js 中的一个类，用于表示一�
 
 // cesium 
 cesium
+
+[vue-cesium](https://zouyaoji.top/vue-cesium-v2/#/zh/start/usage)
+npm install vue-cesium@2.4.2 --save
