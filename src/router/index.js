@@ -6,6 +6,15 @@ Vue.use(Router);
 export default new Router({
     routes: [
         {
+            path: "/",
+            name: "index",
+            meta: {
+                title: "this is index"
+            },
+            component: () =>
+                import(/* webpackChunkName: "aPage" */ "@/views/index.vue")
+        },
+        {
             path: "/aPage",
             name: "aPage",
             meta: {
@@ -22,6 +31,24 @@ export default new Router({
             },
             component: () =>
                 import(/* webpackChunkName: "aPage" */ "@/views/bPage.vue")
+        },
+        {
+            path: "/cPage",
+            name: "cPage",
+            meta: {
+                title: "this is cPage"
+            },
+            component: () =>
+                import(/* webpackChunkName: "aPage" */ "@/views/cPage.vue")
+        },
+        {
+            path: "/useCesium",
+            name: "useCesium",
+            meta: {
+                title: "this is useCesium"
+            },
+            component: () =>
+                import(/* webpackChunkName: "aPage" */ "@/components/useCesium")
         },
     ]
 });
