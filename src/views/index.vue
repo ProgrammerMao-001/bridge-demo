@@ -19,6 +19,10 @@
         <div>
             <router-link to="/dPage"> dPage(canvas) </router-link>
         </div>
+
+        <div>
+            <router-link to="/ePage"> ePage(canvas) </router-link>
+        </div>
     </div>
 </template>
 

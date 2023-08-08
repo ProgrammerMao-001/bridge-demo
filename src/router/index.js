@@ -30,7 +30,7 @@ export default new Router({
                 title: "this is bPage"
             },
             component: () =>
-                import(/* webpackChunkName: "aPage" */ "@/views/bPage.vue")
+                import(/* webpackChunkName: "bPage" */ "@/views/bPage.vue")
         },
         {
             path: "/cPage",
@@ -39,7 +39,7 @@ export default new Router({
                 title: "this is cPage"
             },
             component: () =>
-                import(/* webpackChunkName: "aPage" */ "@/views/cPage.vue")
+                import(/* webpackChunkName: "cPage" */ "@/views/cPage.vue")
         },
         {
             path: "/useCesium",
@@ -48,7 +48,7 @@ export default new Router({
                 title: "this is useCesium"
             },
             component: () =>
-                import(/* webpackChunkName: "aPage" */ "@/components/useCesium")
+                import(/* webpackChunkName: "useCesium" */ "@/components/useCesium")
         },
         {
             path: "/dPage",
@@ -57,7 +57,16 @@ export default new Router({
                 title: "this is dPage"
             },
             component: () =>
-                import(/* webpackChunkName: "aPage" */ "@/views/dPage.vue")
+                import(/* webpackChunkName: "dPage" */ "@/views/dPage.vue")
+        },
+        {
+            path: "/ePage",
+            name: "ePage",
+            meta: {
+                title: "this is ePage"
+            },
+            component: () =>
+                import(/* webpackChunkName: "ePage" */ "@/views/ePage.vue")
         },
     ]
 });
