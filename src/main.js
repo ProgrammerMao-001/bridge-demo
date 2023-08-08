@@ -1,6 +1,8 @@
 import Vue from 'vue'
 import App from './App.vue'
 import router from "./router"
+import ElementUI from 'element-ui';
+import 'element-ui/lib/theme-chalk/index.css';
 import VueCesium from 'vue-cesium'
 
 Vue.config.productionTip = false
@@ -18,6 +20,7 @@ Vue.use(VueCesium, {
   // https://ion.cesium.com/tokens?page=1   ===> token注册地址
   accessToken: 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJqdGkiOiI4NTFlNTExYS0zNGVjLTRlYzQtODRlMy0xNmVjMGUxNmU0Y2UiLCJpZCI6MTU4NjI2LCJpYXQiOjE2OTEzOTEzOTh9.o5SZzuP4kSm86AkWMlTHWW-frZnzswk7fnRWO5sjWQw'
 })
+Vue.use(ElementUI);
 
 new Vue({
   router,
