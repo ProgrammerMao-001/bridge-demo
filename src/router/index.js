@@ -50,5 +50,14 @@ export default new Router({
             component: () =>
                 import(/* webpackChunkName: "aPage" */ "@/components/useCesium")
         },
+        {
+            path: "/dPage",
+            name: "dPage",
+            meta: {
+                title: "this is dPage"
+            },
+            component: () =>
+                import(/* webpackChunkName: "aPage" */ "@/views/dPage.vue")
+        },
     ]
 });
