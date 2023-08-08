@@ -98,7 +98,7 @@
                     return;
                 }
                 console.log('选中的图标是：', this.canvasSensorImg[this.index])
-                // this.showDialog()
+                this.showDialog()
             },
 
             showDialog() {
